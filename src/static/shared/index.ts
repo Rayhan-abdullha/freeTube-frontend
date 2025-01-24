@@ -14,7 +14,13 @@ export const MENUS = [
         isButton: false
     },
     {
-        id: 2,
+        id: 3,
+        label: 'Courses',
+        route: '/courses',
+        isButton: false
+    },
+    {
+        id: 4,
         label: 'Profile',
         route: '/profile',
         isButton: false
