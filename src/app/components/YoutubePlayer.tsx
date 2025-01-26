@@ -146,7 +146,6 @@ const YouTubePlayer: React.FC<YouTubePlayerProps> = ({ url }) => {
 
   return (
     <div className="relative" ref={containerRef}>
-      {/* Video Container */}
       <div style={{ paddingBottom: '56.25%' }} className="relative w-full">
         <YouTube
           videoId={videoId}
@@ -155,9 +154,7 @@ const YouTubePlayer: React.FC<YouTubePlayerProps> = ({ url }) => {
           className="absolute top-0 left-0 w-full h-full"
         />
       </div>
-      {/* Custom Controls */}
       <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-75 text-white flex flex-col gap-3">
-        {/* Progress Bar */}
         <input
           type="range"
           min="0"
@@ -166,42 +163,31 @@ const YouTubePlayer: React.FC<YouTubePlayerProps> = ({ url }) => {
           onChange={handleSeek}
           className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer"
         />
-
-        {/* Controls */}
-        <div className="flex justify-between items-center">
-          {/* Play/Pause */}
+        <div className="flex gap-3 items-center">
           <button
             onClick={handlePlayPause}
             className="px-2 py-1 bg-gray-800 rounded-md hover:bg-gray-700 transition-all"
           >
             {isPlaying ? <FiPause size={18} /> : <FiPlay size={18} />}
           </button>
-
-          {/* Rewind */}
           <button
             onClick={handleRewind}
             className="px-2 py-1 bg-gray-800 rounded-md hover:bg-gray-700 transition-all"
           >
             <FiRewind size={18} />
           </button>
-
-          {/* Fast Forward */}
           <button
             onClick={handleFastForward}
             className="px-2 py-1 bg-gray-800 rounded-md hover:bg-gray-700 transition-all"
           >
             <FiFastForward size={18} />
           </button>
-
-          {/* Mute/Unmute */}
           <button
             onClick={handleMuteUnmute}
             className="px-2 py-1 bg-gray-800 rounded-md hover:bg-gray-700 transition-all"
           >
             {isMuted ? <FiVolumeX size={18} /> : <FiVolume2 size={18} />}
           </button>
-
-          {/* Volume */}
           <div className="flex items-center gap-2">
             <input
               type="range"
@@ -212,8 +198,6 @@ const YouTubePlayer: React.FC<YouTubePlayerProps> = ({ url }) => {
               className="w-12 h-1 bg-gray-400 rounded-lg appearance-none cursor-pointer"
             />
           </div>
-
-          {/* Fullscreen Toggle */}
           <button
             onClick={toggleFullscreen}
             className="px-2 py-1 bg-gray-800 rounded-md hover:bg-gray-700 transition-all"

@@ -83,20 +83,17 @@ const VideoList: React.FC = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string>('');
 
-  // Open modal with the selected video URL
   const handleOpenModal = (e: React.MouseEvent, url: string) => {
     e.stopPropagation();
     setSelectedVideoUrl(url);
     setModalIsOpen(true);
   };
 
-  // Close modal and reset selected video URL
   const handleCloseModal = () => {
     setModalIsOpen(false);
     setSelectedVideoUrl('');
   };
 
-  // Close modal if clicking on the overlay
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (e.target === e.currentTarget) {
       handleCloseModal();
@@ -139,12 +136,10 @@ const VideoList: React.FC = () => {
           </div>
         ))}
       </div>
-
-      {/* Modal */}
       {modalIsOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-          onClick={handleOverlayClick} // Add click handler for overlay
+          onClick={handleOverlayClick}
         >
           <div className="bg-white rounded-lg overflow-hidden w-full max-w-4xl">
             <div className="relative">
