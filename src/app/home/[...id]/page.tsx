@@ -143,9 +143,9 @@ const VideoDetails = () => {
     };
   }, [isPlaying]);
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col items-center mb-12">
       <h1 className="text-xl font-semibold mt-8">Video Details</h1>
-      <div className="bg-white shadow-lg p-6 mt-6 w-full max-w-4xl rounded-lg">
+      <div className="bg-white dark:bg-gray-800 shadow-lg p-6 mt-6 w-full max-w-4xl rounded-lg">
       <div className="relative" ref={containerRef}>
         <div style={{ paddingBottom: '56.25%' }} className="relative w-full">
           <YouTube

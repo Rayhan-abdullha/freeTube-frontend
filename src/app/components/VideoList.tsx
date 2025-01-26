@@ -110,15 +110,15 @@ const VideoList: React.FC = () => {
   };
 
   return (
-    <div className="p-6 font-sans bg-gray-50 rounded-lg shadow-md">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Video List</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="p-6 font-sans rounded-lg shadow-md">
+      <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Video Feed</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {
           videos.map((video: VideosType, index: number) => (
           <div
             onClick={() => handleDetails(video)}
             key={index}
-            className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden cursor-pointer"
           >
             <Image
               src={video.thumbnail}
@@ -131,7 +131,7 @@ const VideoList: React.FC = () => {
               <h3 className="text-xl font-medium text-gray-800">{video.title}</h3>
               <button
                onClick={(e) => handleOpenModal(e, video.url)}
-                className="text-blue-600 hover:underline mt-4 inline-block"
+                className="text-blue-600 hover:underline dark:text-blue-400 mt-4 inline-block"
               >
                 Watch Video
               </button>
