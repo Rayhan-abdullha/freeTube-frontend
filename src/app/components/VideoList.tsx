@@ -6,80 +6,10 @@ import Image from 'next/image';
 import { FiX } from 'react-icons/fi';
 import { useRouter } from 'next/navigation';
 import { getYouTubeVideoId } from '@/utlis/getYoutubeId';
-interface VideosType { id: number; url: string; title: string; description: string; thumbnail: string }
+import { videos, VideosType } from '@/static/videos';
 
 const VideoList: React.FC = () => {
-  const videos: VideosType[] = [
-      {
-        id: 1,
-        url: 'https://www.youtube.com/watch?v=IJc6AJz-TGk', 
-        title: 'Video 1',
-        description: 'Description 1',
-        thumbnail: 'https://i.ytimg.com/vi/IJc6AJz-TGk/hqdefault.jpg',
-      }, {
-        id: 2,
-        url: 'https://www.youtube.com/watch?v=IJc6AJz-TGk', 
-        title: 'Video 2',
-        description: 'Description 2',
-        thumbnail: 'https://i.ytimg.com/vi/IJc6AJz-TGk/hqdefault.jpg',
-    },
-      {
-        id: 3,
-        url: 'https://www.youtube.com/watch?v=IJc6AJz-TGk', 
-        title: 'Video 3',
-        description: 'Description 3',
-        thumbnail: 'https://i.ytimg.com/vi/IJc6AJz-TGk/hqdefault.jpg',
-      },
-      {
-        id: 4,
-        url: 'https://www.youtube.com/watch?v=IJc6AJz-TGk', 
-        title: 'Video 4',
-        description: 'Description 4',
-        thumbnail: 'https://i.ytimg.com/vi/IJc6AJz-TGk/hqdefault.jpg',
-      },
-      {
-        id: 5,
-        url: 'https://www.youtube.com/watch?v=IJc6AJz-TGk', 
-        title: 'Video 5',
-        description: 'Description 5',
-      thumbnail: 'https://i.ytimg.com/vi/IJc6AJz-TGk/hqdefault.jpg',  
-      },
-      {
-        id: 6,
-        url: 'https://www.youtube.com/watch?v=IJc6AJz-TGk', 
-        title: 'Video 6',
-        description: 'Description 6',
-        thumbnail: 'https://i.ytimg.com/vi/IJc6AJz-TGk/hqdefault.jpg',
-      },
-      {
-        id: 7,
-        url: 'https://www.youtube.com/watch?v=IJc6AJz-TGk', 
-        title: 'Video 7',
-      description: 'Description 7',
-      thumbnail: 'https://i.ytimg.com/vi/IJc6AJz-TGk/hqdefault.jpg',
-    },
-      {
-        id: 8,
-        url: 'https://www.youtube.com/watch?v=IJc6AJz-TGk', 
-        title: 'Video 8',
-        description: 'Description 8',
-        thumbnail: 'https://i.ytimg.com/vi/IJc6AJz-TGk/hqdefault.jpg',
-      },
-      {
-        id: 9,
-        url: 'https://www.youtube.com/watch?v=IJc6AJz-TGk', 
-        title: 'Video 9',
-      description: 'Description 9',
-      thumbnail: 'https://i.ytimg.com/vi/IJc6AJz-TGk/hqdefault.jpg',
-    },
-      {
-        id: 10,
-        url: 'https://www.youtube.com/watch?v=IJc6AJz-TGk', 
-        title: 'Video 10',
-        description: 'Description 10',
-        thumbnail: 'https://i.ytimg.com/vi/IJc6AJz-TGk/hqdefault.jpg',
-      },  
-  ];
+  
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string>('');
 
@@ -106,12 +36,15 @@ const VideoList: React.FC = () => {
     navigate.push(`/home/${id}`)
   };
 
+  // random videos feed
+  const videFeeds = [...videos].sort(() => Math.random() - 0.5).slice(0, 10);
+
   return (
     <div className="p-6 font-sans rounded-lg shadow-md">
       <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Video Feed</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {
-          videos.map((video: VideosType, index: number) => (
+          videFeeds.map((video: VideosType, index: number) => (
           <div
             onClick={() => handleDetails(video)}
             key={index}

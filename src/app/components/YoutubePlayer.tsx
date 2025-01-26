@@ -1,3 +1,4 @@
+'use client'
 import { getYouTubeVideoId } from '@/utlis/getYoutubeId';
 import React, { useRef, useState, useEffect } from 'react';
 import YouTube, { YouTubeEvent, YouTubePlayer as Player } from 'react-youtube';

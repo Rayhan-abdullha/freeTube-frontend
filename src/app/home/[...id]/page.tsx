@@ -27,7 +27,7 @@ const VideoDetails = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   if (!videoId) {
-    return <p>Invalid YouTube URL</p>;
+    return <p className='text-red-500 text-center'>Invalid YouTube URL</p>;
   }
 
   const opts = {
