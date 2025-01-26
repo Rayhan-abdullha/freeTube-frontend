@@ -1,10 +1,9 @@
-import { USER_PORTAL_URL } from "@/config";
 
 export const MENUS = [
     {
         id: 1,
         label: 'Home',
-        route: '/',
+        route: '/home',
         isButton: false
     },
     {
@@ -20,6 +19,12 @@ export const MENUS = [
         isButton: false
     },
     {
+        id: 5,
+        label: 'Blog',
+        route: '/blog',
+        isButton: false
+    },
+    {
         id: 4,
         label: 'Profile',
         route: '/profile',
@@ -31,7 +36,7 @@ export const AUTH_MENU = [
     {
         id: 2,
         label: 'Login',
-        route: USER_PORTAL_URL,
+        route: '/login',
         isButton: false
     } 
 ];

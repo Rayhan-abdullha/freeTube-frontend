@@ -2,7 +2,9 @@ import VideoList from "@/app/components/VideoList";
 
 const page = () => {
     return (
-        <VideoList/>
+        <div className="mx-auto max-w-7xl">
+            <VideoList/>
+        </div>
     );
 };
 
