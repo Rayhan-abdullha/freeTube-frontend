@@ -1,11 +1,11 @@
-'use client'
 import React, { useState } from "react";
+
 interface AddVideoFormProps {
   onSubmit: (videoData: {
     title: string;
     url: string;
     description: string;
-    thumbnail: File | null;
+    image: File | null;
   }) => void;
 }
 
@@ -14,7 +14,7 @@ export const AddVideoForm: React.FC<AddVideoFormProps> = ({ onSubmit }) => {
     title: "",
     url: "",
     description: "",
-    thumbnail: null as File | null,
+    image: null as File | null,
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -22,15 +22,15 @@ export const AddVideoForm: React.FC<AddVideoFormProps> = ({ onSubmit }) => {
     setVideoData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
-    setVideoData((prev) => ({ ...prev, thumbnail: file }));
+    setVideoData((prev) => ({ ...prev, image: file }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit(videoData);
-    setVideoData({ title: "", url: "", description: "", thumbnail: null });
+    setVideoData({ title: "", url: "", description: "", image: null });
   };
 
   return (
@@ -39,7 +39,6 @@ export const AddVideoForm: React.FC<AddVideoFormProps> = ({ onSubmit }) => {
         Add a Video
       </h2>
       <form onSubmit={handleSubmit} className="mt-4 space-y-4">
-        {/* Video Title */}
         <div>
           <label
             htmlFor="title"
@@ -58,7 +57,6 @@ export const AddVideoForm: React.FC<AddVideoFormProps> = ({ onSubmit }) => {
           />
         </div>
 
-        {/* Video URL */}
         <div>
           <label
             htmlFor="url"
@@ -77,7 +75,6 @@ export const AddVideoForm: React.FC<AddVideoFormProps> = ({ onSubmit }) => {
           />
         </div>
 
-        {/* Description */}
         <div>
           <label
             htmlFor="description"
@@ -96,25 +93,23 @@ export const AddVideoForm: React.FC<AddVideoFormProps> = ({ onSubmit }) => {
           />
         </div>
 
-        {/* Upload Thumbnail */}
         <div>
           <label
-            htmlFor="thumbnail"
+            htmlFor="image"
             className="block text-sm font-medium text-gray-700 dark:text-gray-300"
           >
-            Upload Thumbnail
+            Upload Image
           </label>
           <input
             type="file"
-            id="thumbnail"
-            name="thumbnail"
+            id="image"
+            name="image"
             accept="image/*"
-            onChange={handleFileChange}
+            onChange={handleImageChange}
             className="mt-1"
           />
         </div>
 
-        {/* Submit Button */}
         <button
           type="submit"
           className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"

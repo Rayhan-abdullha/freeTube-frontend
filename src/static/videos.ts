@@ -71,8 +71,8 @@ export const videos: VideosType[] = [
     thumbnail: 'https://i.ytimg.com/vi/uAxaUo96RP4/hqdefault.jpg',
   },  
 ];
-
-export const courses = [
+export interface CoursesType { id: number; thumb: string; title: string; enrolled: number; videos: VideosType[] }
+export const courses: CoursesType[] = [
     {
       id: 1,
       thumb: "https://cdn.ostad.app/course/cover/2024-11-07T13-34-17.205Z-Untitled-1%20(18).jpg", // Placeholder image URL
