@@ -1,9 +1,9 @@
-import VideoList from "@/app/components/VideoList";
+import VideoList from "@/app/home/components/VideoList";
 
 const page = async () => {
     return (
         <div className="mx-auto max-w-7xl">
-            <VideoList/>
+            <VideoList title="Video Feed"/>
         </div>
     );
 };

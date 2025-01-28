@@ -12,9 +12,7 @@ export default function Course() {
 
   return (
     <div className="container mx-auto">
-      <div className="flex flex-col lg:flex-row">
         <ContentWatch courseName={course.title} videos={course.videos} />
-      </div>
     </div>
   );
 }

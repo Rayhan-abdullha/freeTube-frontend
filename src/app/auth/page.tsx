@@ -1,5 +1,6 @@
 'use client';
-import React from "react";
+
+import React, { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
@@ -8,16 +9,26 @@ import SocialLogin from "./components/SocialLogin";
 const AuthPage = () => {
   const searchParams = useSearchParams(); // Dynamically reads query params
   const router = useRouter();
-  const tab = searchParams.get("tab") || "login"; // Default to "login"
+  
+  // Local state to handle the current tab, default to "login"
+  const [tab, setTab] = useState<string>("login");
 
-  const handleTabChange = (tab: string) => {
-    router.push(`/auth?tab=${tab}`); // Update the URL
+  useEffect(() => {
+    const searchTab = searchParams.get("tab");
+    if (searchTab) {
+      setTab(searchTab); // Sync query params to the state
+    }
+  }, [searchParams]); // Runs on mount and whenever searchParams change
+
+  const handleTabChange = (newTab: string) => {
+    setTab(newTab); // Update the state with the new tab
+    router.push(`/auth?tab=${newTab}`); // Update the URL with the new query parameter
   };
 
   return (
     <div className="flex items-center justify-center h-[80vh] mb-10 bg-gray-50 dark:bg-gray-900">
       <div className="w-full max-w-md bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-        {/* Toggle Buttons */}
+        {/* Tab Buttons */}
         <div className="flex justify-center space-x-4 mb-6">
           <button
             onClick={() => handleTabChange("login")}
@@ -41,7 +52,7 @@ const AuthPage = () => {
           </button>
         </div>
 
-        {/* Conditional Rendering */}
+        {/* Conditional Rendering of Forms */}
         {tab === "register" ? <RegisterForm /> : <LoginForm />}
 
         <div className="my-4 flex items-center">

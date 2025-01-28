@@ -7,17 +7,7 @@ interface TabsProps {
 
 export const Tabs: React.FC<TabsProps> = ({ activeTab, onTabChange }) => {
   return (
-    <div className="flex border-b border-gray-200 dark:border-gray-700">
-      <button
-        className={`py-2 px-4 text-sm font-medium ${
-          activeTab === "home"
-            ? "text-blue-500 border-b-2 border-blue-500"
-            : "text-gray-600 dark:text-gray-400"
-        }`}
-        onClick={() => onTabChange("home")}
-      >
-        Home
-      </button>
+    <div className="flex border-b border-gray-200 dark:border-gray-700 mx-5 xl:mx-0 my-5">
       <button
         className={`py-2 px-4 text-sm font-medium ${
           activeTab === "video"

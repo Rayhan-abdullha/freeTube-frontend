@@ -1,15 +1,14 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 // import { useVideoContext } from '../context/VideoContext';
-import YouTubePlayer from './YoutubePlayer';
 import Image from 'next/image';
-import { FiX } from 'react-icons/fi';
 import { useRouter } from 'next/navigation';
 import { getYouTubeVideoId } from '@/utlis/getYoutubeId';
 import { videos, VideosType } from '@/static/videos';
 import Skeleton from '@/components/Skeleton';
+import VideoModal from './VideoModal';
 
-const VideoList: React.FC = () => {
+const VideoList = ({title}: {title?: string}) => {
   const [videoFeeds, setVideoFeeds] = useState<VideosType[]>([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string>('');
@@ -57,8 +56,8 @@ const VideoList: React.FC = () => {
     <>
       {
         videoFeeds.length === 0 ? < Skeleton /> :
-      <div className="p-6 font-sans rounded-lg shadow-md">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Video Feed</h2>
+      <div className="rounded-lg my-5 mx-5 xl:mx-0">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">{title}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {
             videoFeeds.map((video: VideosType, index: number) => (
@@ -96,7 +95,7 @@ const VideoList: React.FC = () => {
                       Watch Now
                     </button>
                     <button
-                      onClick={(e) => handleOpenModal(e, video.url)}
+                      onClick={() => handleDetails(video)}
                       className="text-blue-600 hover:underline dark:text-blue-400 mt-4 inline-block"
                     >
                       Details Watch
@@ -107,23 +106,11 @@ const VideoList: React.FC = () => {
           ))}
         </div>
         {modalIsOpen && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-            onClick={handleOverlayClick}
-          >
-            <div className="bg-white rounded-lg overflow-hidden w-full max-w-4xl">
-              <div className="relative">
-                <button
-                  onClick={handleCloseModal}
-                  className="absolute top-2 right-2 z-[999] text-white text-2xl font-bold flex items-center justify-center w-10 h-10 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75 transition duration-300"
-                  aria-label="Close"
-                >
-                  <FiX size={24} />
-                </button>
-                <YouTubePlayer url={selectedVideoUrl} />
-              </div>
-            </div>
-          </div>
+          <VideoModal
+            handleCloseModal={handleCloseModal}
+            selectedVideoUrl={selectedVideoUrl}
+            handleOverlayClick={handleOverlayClick}
+          />
         )}
       </div>
       }

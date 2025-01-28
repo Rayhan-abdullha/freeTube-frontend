@@ -1,4 +1,5 @@
 'use client'
+import Image from "next/image";
 import React, { useState } from "react";
 interface ProfileCardProps {
   profile: {
@@ -28,9 +29,11 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ profile, onUpdate }) =
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
       <div className="flex items-center space-x-4">
         <div className="w-20 h-20 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
-          <img
-            src="/profile-placeholder.png"
+          <Image
+            src="https://toppng.com/public/uploads/preview/cool-avatar-transparent-image-cool-boy-avatar-11562893383qsirclznyw.png"
             alt="Profile"
+            width={200}
+            height={200}
             className="w-full h-full object-cover"
           />
         </div>

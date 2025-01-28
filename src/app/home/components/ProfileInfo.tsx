@@ -1,12 +1,15 @@
+import Image from 'next/image'
 import React from 'react'
 
-const ProfileCard = () => {
+const ProfileInfo = () => {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mx-5 xl:mx-0 h-[200px]">
         <div className="flex items-center space-x-4">
             <div className="w-20 h-20 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
-                <img
-                src="/profile-placeholder.png"
+                <Image
+                      src="https://toppng.com/public/uploads/preview/cool-avatar-transparent-image-cool-boy-avatar-11562893383qsirclznyw.png"
+                      width={100}
+                      height={100}
                 alt="Profile"
                 className="w-full h-full object-cover"
                 />
@@ -22,4 +25,4 @@ const ProfileCard = () => {
   )
 }
 
-export default ProfileCard
+export default ProfileInfo

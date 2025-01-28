@@ -7,12 +7,12 @@ import YouTubePlayer from '@/app/components/YoutubePlayer'
 const ContentWatch = ({courseName,videos} : {courseName: string, videos: VideosType[]}) => {
     const [videoId, setVideoId] = useState<string>(videos[0].url);
   return (
-      <>
-        <div className="w-full lg:w-2/3 p-4">
+      <div className='flex flex-col gap-5 lg:flex-row'>
+        <div className="w-full lg:w-2/3">
             <YouTubePlayer url={videoId} />
-            </div>
-          <ContentList courseName={courseName} videos={videos} setVideoId={setVideoId} />
-      </>
+        </div>
+        <ContentList courseName={courseName} videos={videos} setVideoId={setVideoId} />
+      </div>
   )
 }
 
