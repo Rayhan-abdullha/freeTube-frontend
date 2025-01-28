@@ -1,29 +1,29 @@
 'use client';
 
-import React, { useEffect, useState } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import React from "react";
+// import { useSearchParams, useRouter } from "next/navigation";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import SocialLogin from "./components/SocialLogin";
 
 const AuthPage = () => {
-  const searchParams = useSearchParams(); // Dynamically reads query params
-  const router = useRouter();
+  // const searchParams = useSearchParams(); // Dynamically reads query params
+  // const router = useRouter();
   
-  // Local state to handle the current tab, default to "login"
-  const [tab, setTab] = useState<string>("login");
+  // // Local state to handle the current tab, default to "login"
+  // const [tab, setTab] = useState<string>("login");
 
-  useEffect(() => {
-    const searchTab = searchParams.get("tab");
-    if (searchTab) {
-      setTab(searchTab); // Sync query params to the state
-    }
-  }, [searchParams]); // Runs on mount and whenever searchParams change
+  // useEffect(() => {
+  //   const searchTab = searchParams.get("tab");
+  //   if (searchTab) {
+  //     setTab(searchTab); // Sync query params to the state
+  //   }
+  // }, [searchParams]); // Runs on mount and whenever searchParams change
 
-  const handleTabChange = (newTab: string) => {
-    setTab(newTab); // Update the state with the new tab
-    router.push(`/auth?tab=${newTab}`); // Update the URL with the new query parameter
-  };
+  // const handleTabChange = (newTab: string) => {
+  //   setTab(newTab); // Update the state with the new tab
+  //   router.push(`/auth?tab=${newTab}`); // Update the URL with the new query parameter
+  // };
 
   return (
     <div className="flex items-center justify-center h-[80vh] mb-10 bg-gray-50 dark:bg-gray-900">
@@ -31,9 +31,9 @@ const AuthPage = () => {
         {/* Tab Buttons */}
         <div className="flex justify-center space-x-4 mb-6">
           <button
-            onClick={() => handleTabChange("login")}
+            // onClick={() => handleTabChange("login")}
             className={`px-4 py-2 text-sm font-semibold rounded-md ${
-              tab === "login"
+              true
                 ? "bg-blue-500 text-white"
                 : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-300"
             }`}
@@ -41,9 +41,9 @@ const AuthPage = () => {
             Login
           </button>
           <button
-            onClick={() => handleTabChange("register")}
+            // onClick={() => handleTabChange("register")}
             className={`px-4 py-2 text-sm font-semibold rounded-md ${
-              tab === "register"
+              true
                 ? "bg-blue-500 text-white"
                 : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-300"
             }`}
@@ -53,7 +53,7 @@ const AuthPage = () => {
         </div>
 
         {/* Conditional Rendering of Forms */}
-        {tab === "register" ? <RegisterForm /> : <LoginForm />}
+        {'register' === "register" ? <RegisterForm /> : <LoginForm />}
 
         <div className="my-4 flex items-center">
           <hr className="flex-grow border-gray-300 dark:border-gray-600" />
@@ -62,7 +62,7 @@ const AuthPage = () => {
         </div>
 
         {/* Social Login */}
-        <SocialLogin isLogin={tab !== "register"} />
+        <SocialLogin isLogin={"register" !== "register"} />
       </div>
     </div>
   );
