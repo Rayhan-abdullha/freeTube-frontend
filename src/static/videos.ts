@@ -2,6 +2,13 @@ export interface VideosType { id: number; url: string; title: string; descriptio
 
 export const videos: VideosType[] = [
   {
+    id: 22,
+    url: 'https://www.youtube.com/watch?v=r4pzwhi81kk',
+    title: 'Video 22',
+    description: 'Description 22',
+    thumbnail: 'https://i.ytimg.com/vi/r4pzwhi81kk/hqdefault.jpg',
+  },
+  {
     id: 1,
     url: 'https://www.youtube.com/watch?v=IJc6AJz-TGk', 
     title: 'Video 1',

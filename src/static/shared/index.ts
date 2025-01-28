@@ -36,7 +36,7 @@ export const AUTH_MENU = [
     {
         id: 2,
         label: 'Login',
-        route: '/login',
+        route: '/auth?type=login',
         isButton: false
     } 
 ];
