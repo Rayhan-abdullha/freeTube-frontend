@@ -7,6 +7,7 @@ import { getYouTubeVideoId } from '@/utlis/getYoutubeId';
 import { videos, VideosType } from '@/static/videos';
 import Skeleton from '@/components/Skeleton';
 import VideoModal from './VideoModal';
+import { FiBell } from 'react-icons/fi';
 
 const VideoList = ({title}: {title?: string}) => {
   const [videoFeeds, setVideoFeeds] = useState<VideosType[]>([]);
@@ -74,17 +75,23 @@ const VideoList = ({title}: {title?: string}) => {
                 className="w-full h-48 object-cover cursor-pointer"
               />
               <div className="p-4">
-                <div onClick={() => handleUserProfile('rayhan')} className="flex items-center mb-4 cursor-pointer">
-                  <Image
-                    src="https://th.bing.com/th/id/OIP.wEsBe2udHBieFeZVmus8qAHaHk?rs=1&pid=ImgDetMain"
-                    alt="Avatar"
-                    width={30}
-                    height={30}
-                    className="rounded-full mr-2"
-                  />
-                  <span className="text-md font-medium text-gray-800 dark:text-gray-100">
-                    Rayhan
-                  </span>
+                  <div className='flex justify-between items-center'>
+                    <div onClick={() => handleUserProfile('rayhan')} className="flex items-center mb-4 cursor-pointer">
+                    <Image
+                      src="https://th.bing.com/th/id/OIP.wEsBe2udHBieFeZVmus8qAHaHk?rs=1&pid=ImgDetMain"
+                      alt="Avatar"
+                      width={30}
+                      height={30}
+                      className="rounded-full mr-2"
+                    />
+                    <span className="text-md font-medium text-gray-800 dark:text-gray-100">
+                      Rayhan
+                    </span>
+                  </div>
+                  <button className='bg-blue-500 hover:bg-blue-600 text-white text-sm py-[5px] px-3 rounded-full flex items-center gap-2'>
+                    <FiBell className='mt-[3px]'/>
+                    Subscribe
+                  </button>
                 </div>
                 <h3 className="text-sm font-medium text-gray-800">{video.title}</h3>
                 <div className='flex justify-between'>

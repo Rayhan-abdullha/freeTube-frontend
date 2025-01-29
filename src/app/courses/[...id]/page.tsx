@@ -11,7 +11,7 @@ export default function Course() {
   }
 
   return (
-    <div className="container mx-auto">
+    <div className="md:container mx-auto mt-0 lg:mt-10 mb-10">
         <ContentWatch courseName={course.title} videos={course.videos} />
     </div>
   );
