@@ -20,6 +20,26 @@ export const Tabs: React.FC<TabsProps> = ({ activeTab, onTabChange }) => {
       </button>
       <button
         className={`py-2 px-4 text-sm font-medium ${
+          activeTab === "playlist"
+            ? "text-blue-500 border-b-2 border-blue-500"
+            : "text-gray-600 dark:text-gray-400"
+        }`}
+        onClick={() => onTabChange("playlist")}
+      >
+        Playlist
+      </button>
+      <button
+        className={`py-2 px-4 text-sm font-medium ${
+          activeTab === "blogs"
+            ? "text-blue-500 border-b-2 border-blue-500"
+            : "text-gray-600 dark:text-gray-400"
+        }`}
+        onClick={() => onTabChange("blogs")}
+      >
+        Blogs
+      </button>
+      <button
+        className={`py-2 px-4 text-sm font-medium ${
           activeTab === "add-video"
             ? "text-blue-500 border-b-2 border-blue-500"
             : "text-gray-600 dark:text-gray-400"

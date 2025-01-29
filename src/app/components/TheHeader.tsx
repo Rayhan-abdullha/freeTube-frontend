@@ -65,11 +65,12 @@ const TheHeader = () => {
                         </div>
                     </div>
                 </div>
-
                 {/* Mobile menu */}
                 {!isShowMobileMenu ? (
                     <div className='bg-white lg:hidden flex justify-between items-center bg-primary-200/40 backdrop-blur-sm dark:bg-gray-800/60 mt-3 px-4 py-3 rounded-full'>
-                        <Logo className='!h-7' />
+                        <Link href={'/'}>
+                            <Logo className='!h-7' />
+                        </Link>
                         <div className='flex items-center justify-end gap-6'>
                             <ThemeSwitcher />
                             <button

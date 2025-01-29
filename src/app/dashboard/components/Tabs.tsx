@@ -18,6 +18,16 @@ export const Tabs: React.FC<TabsProps> = ({ activeTab, onTabChange }) => {
       >
         Add-Video
       </button>
+      <button
+        className={`py-2 px-4 text-sm font-medium ${
+          activeTab === "add-course"
+            ? "text-blue-500 border-b-2 border-blue-500"
+            : "text-gray-600 dark:text-gray-400"
+        }`}
+        onClick={() => onTabChange("add-course")}
+      >
+        Add-Course
+      </button>
     </div>
   );
 };
