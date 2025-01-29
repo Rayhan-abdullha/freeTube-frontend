@@ -33,11 +33,11 @@ const VideoList = ({title}: {title?: string}) => {
   const handleDetails = (video: VideosType) => {
     const { url } = video
     const id = getYouTubeVideoId(url)
-    navigate.push(`/home/video/${id}`)
+    navigate.push(`/video/${id}`)
   };
 
   const handleUserProfile = (id: string) => {
-    navigate.push(`/home/profile/${id}`)
+    navigate.push(`/uploader/@${id}`)
   };
 
   useEffect(() => {
@@ -55,7 +55,7 @@ const VideoList = ({title}: {title?: string}) => {
   return (
     <>
       {
-        videoFeeds.length === 0 ? < Skeleton /> :
+        videoFeeds.length === 0 ? < Skeleton grid='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'/> :
       <div className="rounded-lg my-5 mx-5 xl:mx-0">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">{title}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

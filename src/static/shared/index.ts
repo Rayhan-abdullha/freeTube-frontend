@@ -3,7 +3,7 @@ export const MENUS = [
     {
         id: 1,
         label: 'Home',
-        route: '/home',
+        route: '/',
         isButton: false
     },
     {

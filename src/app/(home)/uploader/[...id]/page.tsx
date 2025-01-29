@@ -2,9 +2,9 @@
 import { useState } from "react";
 
 import { Tabs } from "../../components/Tabs";
-import VideoList from "@/app/home/components/VideoList";
 import ComingSoon from "@/app/components/ComingSoon";
 import ProfileInfo from "../../components/ProfileInfo";
+import UploadVideoList from "../../components/UploadVideoList";
 const ProfileData: React.FC = () => {
   const [activeTab, setActiveTab] = useState("video");
   return (
@@ -13,7 +13,7 @@ const ProfileData: React.FC = () => {
         <Tabs activeTab={activeTab} onTabChange={setActiveTab} />
         <div className="mt-6">
           {activeTab === "video" && (
-            <VideoList/>
+            <UploadVideoList/>
           )}
           {activeTab === "blogs" && (
             <ComingSoon/>

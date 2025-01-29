@@ -28,7 +28,7 @@ const YouTubePlayer: React.FC<YouTubePlayerProps> = ({ url }) => {
 
 
   return (
-    <div className="bg-white dark:bg-gray-800 shadow-lg p-6 mt-6 w-full rounded-lg">
+    <div className="bg-white dark:bg-gray-800 shadow-lg p-2 sm:p-4 md:p-6 md:mt-6 w-full rounded-lg">
       <div style={{ paddingBottom: '56.25%' }} className="relative w-full">
         <YouTube
           videoId={videoId}

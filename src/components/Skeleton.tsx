@@ -1,8 +1,8 @@
 import React from "react";
 
-const Skeleton = () => {
+const Skeleton = ({grid}: {grid: string}) => {
   return (
-    <div className="grid w-full px-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className={`w-full px-4 ${grid}`}>
       {[...Array(10)].map((_, index) => (
         <div
           key={index}
