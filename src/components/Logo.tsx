@@ -3,7 +3,9 @@ const Logo = ({ className }: { className?: string }) => {
     const { theme } = useTheme();
 
     return (
-        <h3 className={`${theme === 'dark' ? '/logo_white.png' : '/logo_white.png'} ${className}`}>FreeTube</h3>
+        <h3 className={`${theme === 'dark' ? '/logo_white.png' : '/logo_white.png'} ${className}`}>
+            CleanView 
+        </h3>
     );
 };
 

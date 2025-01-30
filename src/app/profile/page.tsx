@@ -5,7 +5,8 @@ import { Tabs } from "./components/Tabs";
 import { AddVideoForm } from "../components/UploadVideo";
 import CourseItem from "./components/CourseItem";
 import PlaylistComponent from "./components/AddPlaylist";
-import ComingSoon from "../components/ComingSoon";
+// import ComingSoon from "../components/ComingSoon";
+import BlogForm from "../blog/components/BlogForm";
 
 export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState("enrolled-courses");
@@ -32,14 +33,12 @@ export default function ProfilePage() {
             <AddVideoForm onSubmit={() => {}}/>
           )}
           {
-            activeTab === "blogs" && (
-              <ComingSoon/>
-            )
-          }
-          {
             activeTab === "playlist" && (
               <PlaylistComponent/>
             )
+          }
+          {
+            activeTab === 'add-blogs' && ( <BlogForm />)
           }
         </div>
       </div>

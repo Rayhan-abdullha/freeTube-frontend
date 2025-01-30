@@ -14,6 +14,7 @@ import '../styles/global.css';
 import { TheFooter, TheHeader } from './components';
 import AosInit from '@/utlis/aos';
 import ScrollTop from '@/utlis/ScrollTop';
+import { BlogProvider } from '@/context/BlogContext';
 
 export const metadata: Metadata = {
     metadataBase: new URL(SITE_DOMAIN),
@@ -46,11 +47,13 @@ export default function RootLayout({
                     defaultTheme='system'
                     enableSystem
                 >
-                    <TheHeader />
-                    {children}
-                    <TheFooter />
-                    <AosInit />
-                    <ScrollTop />
+                    <BlogProvider>
+                        <TheHeader />
+                        {children}
+                        <TheFooter />
+                        <AosInit />
+                        <ScrollTop />
+                    </BlogProvider>
                 </ThemeProvider>
             </body>
         </html>
