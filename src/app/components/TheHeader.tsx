@@ -1,15 +1,16 @@
 'use client';
-import RoundedBtn from '@/components/core/buttons/RoundedBtn';
 import { Icons } from '@/components/Icons';
 import Logo from '@/components/Logo';
 import { ThemeSwitcher } from '@/components/themeSwitcher';
-import { AUTH_MENU, MENUS } from '@/static';
+import { MENUS } from '@/static';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const TheHeader = () => {
     const [isShowMobileMenu, setIsShowMobileMenu] = useState(false);
+    const [isLogin, setIsLogin] = useState(false);
     const pathName = usePathname();
 
     useEffect(() => {
@@ -28,26 +29,46 @@ const TheHeader = () => {
 
     const closeMobileMenu = () => setIsShowMobileMenu(false);
 
+
+    useEffect(() => {
+        // check if localstorage has user data
+        const user = localStorage.getItem('user');
+        if (user) {
+            setIsLogin(true);
+        }
+    }, []);
+
     return (
-        <header className='sticky top-0 py-4 z-50 bg-white dark:bg-gray-900 shadow-md mb-3 xl:mb-6'>
-            <div className='container flex justify-between items-center px-4'>
+        <header className='sticky top-0 py-4 z-50 bg-main-500 dark:bg-gray-900 sm:shadow-sm mb-3 xl:mb-6'>
+            <div className='container flex justify-between sm:justify-center items-center px-4'>
                 <Link href={'/'}>
-                    <Logo className='h-8 dark:text-white' />
+                    <Logo className='h-8 dark:text-white block sm:hidden' />
                 </Link>
-                <nav className='hidden lg:flex items-center gap-6 text-gray-900 dark:text-white'>
-                    {MENUS.map(({ id, route, label }) => (
-                        <Link key={id} href={route} className={`hover:text-primary-500 px-3 py-2 ${pathName === route ? 'font-bold text-blue-500' : ''}`}>
-                            {label}
-                        </Link>
-                    ))}
-                    {AUTH_MENU.map(({ id, route, label }) => (
-                        <RoundedBtn key={id} href={route}>
-                            {label}
-                        </RoundedBtn>
-                    ))}
+                <nav className='hidden sm:flex items-center gap-6 text-gray-900 dark:text-white'>
+                    {
+                        MENUS.map(({ id, route, label }) => (
+                            <Link key={id} href={route} className={`hover:text-primary-500 px-3 py-2 ${pathName === route ? 'font-medium text-blue-500' : ''}`}>
+                                {label}
+                            </Link>
+                        ))
+                    }
+                   {
+                    isLogin ?  <Link
+                    href={'/auth?tab=login'}
+                    className={`bg-base-200 py-1 px-4 text-white rounded-full font-medium hover:scale-105 transition-all duration-300`}
+                    >
+                        Login
+                    </Link> : <Image
+                        src="https://th.bing.com/th/id/OIP.wEsBe2udHBieFeZVmus8qAHaHk?rs=1&pid=ImgDetMain"
+                        alt="Avatar"
+                        width={50}
+                        height={50}
+                        className="rounded-full"
+                    />
+                }
                     <ThemeSwitcher />
                 </nav>
-                <div className='lg:hidden flex items-center gap-4'>
+                <div className='sm:hidden flex items-center gap-4'>
                     <ThemeSwitcher />
                     <button onClick={() => setIsShowMobileMenu(!isShowMobileMenu)}>
                         <Icons.HamMenu />
@@ -70,11 +91,20 @@ const TheHeader = () => {
                         {label}
                     </Link>
                 ))}
-                {AUTH_MENU.map(({ id, route, label }) => (
-                    <RoundedBtn key={id} href={route} className='w-40 text-center' onClick={closeMobileMenu}>
-                        {label}
-                    </RoundedBtn>
-                ))}
+                 {
+                    isLogin ?  <Link
+                    href={'/auth?tab=login'}
+                    className={`bg-base-200 px-5 py-2 text-white rounded-full font-medium hover:scale-105 transition-all duration-300`}
+                    >
+                        Login
+                    </Link> : <Image
+                        src="https://th.bing.com/th/id/OIP.wEsBe2udHBieFeZVmus8qAHaHk?rs=1&pid=ImgDetMain"
+                        alt="Avatar"
+                        width={50}
+                        height={50}
+                        className="rounded-full"
+                    />
+                }
             </div>
         </header>
     );

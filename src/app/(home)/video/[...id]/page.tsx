@@ -26,7 +26,7 @@ const VideoDetails = () => {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col items-center mb-12">
       <div className='max-w-6xl'>
-      <div className="bg-white dark:bg-gray-800 shadow-lg p-2 sm:p-4 md:p-6 mt-6 w-full rounded-lg">
+      <div className="bg-white dark:bg-gray-800 shadow-lg p-2 sm:p-4 mt-6 w-full rounded-lg">
       <div style={{ paddingBottom: '56.25%' }} className="relative w-full">
         <YouTube
           videoId={videoId}

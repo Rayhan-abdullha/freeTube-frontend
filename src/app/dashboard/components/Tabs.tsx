@@ -7,27 +7,31 @@ interface TabsProps {
 
 export const Tabs: React.FC<TabsProps> = ({ activeTab, onTabChange }) => {
   return (
-    <div className="flex border-b border-gray-200 dark:border-gray-700">
-      <button
-        className={`py-2 px-4 text-sm font-medium ${
-          activeTab === "add-video"
-            ? "text-blue-500 border-b-2 border-blue-500"
-            : "text-gray-600 dark:text-gray-400"
-        }`}
+    <ul className="flex items-center bg-[#59bdf738] rounded-full p-1 relative">
+      <div
+        className={`${
+          activeTab === "add-video" && "translate-x-[10px]"
+        } ${
+          activeTab === "add-course" && "translate-x-[140px]"
+        } absolute bg-[#3B9DF8] text-[#fff] h-[85%] w-[95px] transition duration-700 rounded-full cursor-pointer`}
+      ></div>
+
+      <li
+        className={`${
+          activeTab === "add-video" && " !text-[#fff]"
+        } px-6 py-2 text-[#424242] z-20 transition duration-300 rounded-full cursor-pointer`}
         onClick={() => onTabChange("add-video")}
       >
         Add-Video
-      </button>
-      <button
-        className={`py-2 px-4 text-sm font-medium ${
-          activeTab === "add-course"
-            ? "text-blue-500 border-b-2 border-blue-500"
-            : "text-gray-600 dark:text-gray-400"
-        }`}
+      </li>
+      <li
+        className={`${
+          activeTab === "add-course" && " !text-[#fff]"
+        } px-6 py-2 text-[#424242] z-20 transition duration-300 rounded-full cursor-pointer`}
         onClick={() => onTabChange("add-course")}
       >
         Add-Course
-      </button>
-    </div>
+      </li>
+    </ul>
   );
 };

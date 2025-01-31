@@ -22,7 +22,7 @@ const BlogDetail = () => {
     <div>
       <div className="bg-gray-200 dark:bg-gray-800 py-10 md:py-14 overflow-hidden mt-[-26px]">
         <div className="max-w-4xl mx-auto items-center flex flex-col lg:flex-row gap-10 ">
-          <div>
+          <div className="mx-5">
             <h5 className="text-xl font-bold mb-6">Javascript</h5>
             <h1 className="text-3xl font-bold mb-6">{blog.title}</h1>
             <div className="flex items-center gap-2">

@@ -24,22 +24,8 @@ export const MENUS = [
         route: '/blog',
         isButton: false
     },
-    {
-        id: 4,
-        label: 'Profile',
-        route: '/profile',
-        isButton: false
-    },
 ];
 
-export const AUTH_MENU = [
-    {
-        id: 2,
-        label: 'Login',
-        route: '/auth?type=login',
-        isButton: false
-    } 
-];
 
 export const FOOTER_DATA = {
     description : `Welcome to Freetube – Where Entertainment Meets Innovation

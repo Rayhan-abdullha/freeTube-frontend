@@ -22,7 +22,7 @@ const VideoModal = ({handleOverlayClick, handleCloseModal, selectedVideoUrl}: Pr
             >
                 <FiX size={24} />
             </button>
-            <YouTubePlayer url={selectedVideoUrl} />
+            <YouTubePlayer url={selectedVideoUrl} className='bg-white dark:bg-gray-800'/>
             </div>
         </div>
     </div>

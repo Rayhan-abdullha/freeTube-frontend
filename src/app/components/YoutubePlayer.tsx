@@ -5,9 +5,10 @@ import YouTube from 'react-youtube';
 
 interface YouTubePlayerProps {
   url: string;
+  className: string
 }
 
-const YouTubePlayer: React.FC<YouTubePlayerProps> = ({ url }) => {
+const YouTubePlayer: React.FC<YouTubePlayerProps> = ({ url, className }) => {
   const videoId = getYouTubeVideoId(url);
   if (!videoId) {
     return <p>Invalid YouTube URL</p>;
@@ -28,7 +29,7 @@ const YouTubePlayer: React.FC<YouTubePlayerProps> = ({ url }) => {
 
 
   return (
-    <div className="bg-white dark:bg-gray-800 shadow-lg p-2 sm:p-4 md:p-6 md:mt-6 w-full rounded-lg">
+    <div className={`shadow-lg p-2 sm:p-4 w-full rounded-lg ${className}`}>
       <div style={{ paddingBottom: '56.25%' }} className="relative w-full">
         <YouTube
           videoId={videoId}

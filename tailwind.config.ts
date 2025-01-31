@@ -85,9 +85,9 @@ export default {
   			}
   		},
   		fontFamily: {
-  			outfit: [
-  				'var(--font-outfit-sans)'
-  			]
+			roboto: [
+				'var(--font-roboto)'
+			]
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
