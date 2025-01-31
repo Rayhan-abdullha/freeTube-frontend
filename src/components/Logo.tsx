@@ -1,7 +1,7 @@
 const Logo = ({ className }: { className?: string }) => {
     return (
         <h3 className={`text-xl font-bold ${className}`}>
-            Productivize 
+            MindSync 
         </h3>
     );
 };

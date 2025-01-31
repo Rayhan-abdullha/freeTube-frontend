@@ -56,9 +56,9 @@ const VideoList = () => {
   return (
     <>
       {
-        videoFeeds.length === 0 ? < VideoSkeleton grid='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'/> :
+        videoFeeds.length === 0 ? < VideoSkeleton grid='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 gap-4'/> :
         <div className="my-5 mx-5 2xl:mx-0">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 gap-4">
         {videoFeeds.map((video: VideosType, index: number) => (
           <div
             key={index}
@@ -85,7 +85,7 @@ const VideoList = () => {
                     alt="Avatar"
                     width={50}
                     height={50}
-                    className="rounded-full"
+                    className="rounded-full w-10 h-10 object-cover"
                   />
                   <span className="text-sm font-semibold text-gray-800 dark:text-gray-100 capitalize">
                     Rayhan

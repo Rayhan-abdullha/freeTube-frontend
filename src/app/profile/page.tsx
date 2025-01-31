@@ -7,6 +7,7 @@ import CourseItem from "./components/CourseItem";
 import PlaylistComponent from "./components/AddPlaylist";
 // import ComingSoon from "../components/ComingSoon";
 import BlogForm from "../blog/components/BlogForm";
+import BlogHome from "../blog/page";
 
 export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState("enrolled-courses");
@@ -39,6 +40,9 @@ export default function ProfilePage() {
           }
           {
             activeTab === 'add-blogs' && ( <BlogForm />)
+          }
+          {
+            activeTab === 'blogs' && ( <BlogHome />)
           }
         </div>
       </div>

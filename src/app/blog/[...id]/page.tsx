@@ -88,7 +88,7 @@ const BlogDetail = () => {
           )}
           {section.type === "video" && (
             <div className="mb-4">
-              <YouTubePlayer url={section.content} />
+              <YouTubePlayer url={section.content} className="bg-white dark:bg-gray-800"/>
             </div>
           )}
         </div>

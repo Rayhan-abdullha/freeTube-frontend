@@ -19,7 +19,7 @@ export const Tabs: React.FC<TabsProps> = ({ activeTab, onTabChange }) => {
       <li
         className={`${
           activeTab === "add-video" && " !text-[#fff]"
-        } px-6 py-2 text-[#424242] z-20 transition duration-300 rounded-full cursor-pointer`}
+        } px-6 py-2 text-[#424242] dark:text-[#fff] z-20 transition duration-300 rounded-full cursor-pointer`}
         onClick={() => onTabChange("add-video")}
       >
         Add-Video
@@ -27,7 +27,7 @@ export const Tabs: React.FC<TabsProps> = ({ activeTab, onTabChange }) => {
       <li
         className={`${
           activeTab === "add-course" && " !text-[#fff]"
-        } px-6 py-2 text-[#424242] z-20 transition duration-300 rounded-full cursor-pointer`}
+        } px-6 py-2 text-[#424242] dark:text-[#fff] z-20 transition duration-300 rounded-full cursor-pointer`}
         onClick={() => onTabChange("add-course")}
       >
         Add-Course

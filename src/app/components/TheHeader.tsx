@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 
 const TheHeader = () => {
     const [isShowMobileMenu, setIsShowMobileMenu] = useState(false);
-    const [isLogin, setIsLogin] = useState(false);
+    const isLogin = true
     const pathName = usePathname();
 
     useEffect(() => {
@@ -29,15 +29,6 @@ const TheHeader = () => {
 
     const closeMobileMenu = () => setIsShowMobileMenu(false);
 
-
-    useEffect(() => {
-        // check if localstorage has user data
-        const user = localStorage.getItem('user');
-        if (user) {
-            setIsLogin(true);
-        }
-    }, []);
-
     return (
         <header className='sticky top-0 py-4 z-50 bg-main-500 dark:bg-gray-900 sm:shadow-sm mb-3 xl:mb-6'>
             <div className='container flex justify-between sm:justify-center items-center px-4'>
@@ -53,18 +44,21 @@ const TheHeader = () => {
                         ))
                     }
                    {
-                    isLogin ?  <Link
+                    !isLogin ?  <Link
                     href={'/auth?tab=login'}
                     className={`bg-base-200 py-1 px-4 text-white rounded-full font-medium hover:scale-105 transition-all duration-300`}
                     >
                         Login
-                    </Link> : <Image
-                        src="https://th.bing.com/th/id/OIP.wEsBe2udHBieFeZVmus8qAHaHk?rs=1&pid=ImgDetMain"
-                        alt="Avatar"
-                        width={50}
-                        height={50}
-                        className="rounded-full"
-                    />
+                        </Link> :
+                            <Link href={'/profile'}>
+                            <Image
+                                src="https://th.bing.com/th/id/OIP.wEsBe2udHBieFeZVmus8qAHaHk?rs=1&pid=ImgDetMain"
+                                alt="Avatar"
+                                width={50}
+                                height={50}
+                                className="rounded-full w-10 h-10 object-cover shadow-md cursor-pointer hover:scale-105 transition-all duration-300"
+                                />
+                        </Link>
                 }
                     <ThemeSwitcher />
                 </nav>
