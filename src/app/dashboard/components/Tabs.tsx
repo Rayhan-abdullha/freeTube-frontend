@@ -7,7 +7,7 @@ interface TabsProps {
 
 export const Tabs: React.FC<TabsProps> = ({ activeTab, onTabChange }) => {
   return (
-    <ul className="flex items-center bg-[#59bdf738] rounded-full p-1 relative">
+    <ul className="flex items-center rounded-full p-1 relative">
       <div
         className={`${
           activeTab === "add-video" && "translate-x-[10px]"
@@ -19,7 +19,7 @@ export const Tabs: React.FC<TabsProps> = ({ activeTab, onTabChange }) => {
       <li
         className={`${
           activeTab === "add-video" && " !text-[#fff]"
-        } px-6 py-2 text-[#424242] dark:text-[#fff] z-20 transition duration-300 rounded-full cursor-pointer`}
+        } px-6 py-1 text-[#424242] dark:text-[#fff] z-20 transition duration-300 rounded-full cursor-pointer`}
         onClick={() => onTabChange("add-video")}
       >
         Add-Video
@@ -27,7 +27,7 @@ export const Tabs: React.FC<TabsProps> = ({ activeTab, onTabChange }) => {
       <li
         className={`${
           activeTab === "add-course" && " !text-[#fff]"
-        } px-6 py-2 text-[#424242] dark:text-[#fff] z-20 transition duration-300 rounded-full cursor-pointer`}
+        } px-6 py-1 text-[#424242] dark:text-[#fff] z-20 transition duration-300 rounded-full cursor-pointer`}
         onClick={() => onTabChange("add-course")}
       >
         Add-Course

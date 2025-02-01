@@ -11,11 +11,10 @@ const ContentWatch = ({courseName,videos} : {courseName: string, videos: VideosT
     <div className="w-full lg:w-2/3">
         <YouTubePlayer url={videoId} className='bg-white dark:bg-gray-800'/>
     </div>
-    <div className="w-full lg:w-1/3 overflow-y-auto max-h-[60vh] lg:max-h-[60vh] custom-scrollbar">
+    <div className="w-full lg:w-1/3 overflow-y-auto max-h-[60vh] lg:max-h-[75vh] custom-scrollbar">
         <ContentList courseName={courseName} videos={videos} setVideoId={setVideoId} />
     </div>
-</div>
-
+  </div>
   )
 }
 

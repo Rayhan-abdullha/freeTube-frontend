@@ -1,9 +1,9 @@
 import React from "react";
 
-const Skeleton = ({grid}: {grid: string}) => {
+const Skeleton = ({ len, grid }: {len?: number,grid: string}) => {
   return (
-    <div className={`w-full px-4 ${grid}`}>
-      {[...Array(10)].map((_, index) => (
+    <div className={`w-full px-4 ${grid} mb-5`}>
+      {[...Array(len || 10)].map((_, index) => (
         <div
           key={index}
           className="relative space-y-5 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 p-4 shadow-xl shadow-gray-200/50 dark:shadow-gray-900/50 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-gray-300/50 dark:via-gray-600/30 before:to-transparent"
