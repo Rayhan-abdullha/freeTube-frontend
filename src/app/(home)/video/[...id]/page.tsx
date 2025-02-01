@@ -57,7 +57,7 @@ const VideoDetails = () => {
           className="absolute top-0 left-0 w-full h-full rounded-xl"
         />
       </div>
-      <div className='video-info overflow-y-auto custom-scrollbar max-h-screen mt-5 mx-5'>
+      <div className='video-info overflow-y-auto custom-scrollbar max-h-screen mt-5 ml-5'>
         <div onClick={() => handleUserProfile('rayhan')} className="flex items-center gap-4 cursor-pointer mb-6">
           <Image
             src="https://th.bing.com/th/id/OIP.wEsBe2udHBieFeZVmus8qAHaHk?rs=1&pid=ImgDetMain"
