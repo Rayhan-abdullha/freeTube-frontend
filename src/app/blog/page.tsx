@@ -18,8 +18,6 @@ export default function BlogHome() {
   };
 
   useEffect(() => {
-    // window.scrollTo(0, 0);
-
     const promise = new Promise((resolve) => {
       setTimeout(() => {
         const randBlogs = blogs.sort(() => 0.5 - Math.random()).slice(0, blogs.length)

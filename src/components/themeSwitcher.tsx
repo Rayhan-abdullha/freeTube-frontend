@@ -1,7 +1,7 @@
 "use client";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Icons } from "./Icons";
+import { SunDim, SunMoon } from "lucide-react";
 
 export const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
@@ -21,9 +21,9 @@ export const ThemeSwitcher = () => {
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "light" ? (
-        <Icons.Moon className="stroke-gray-800 stroke-[1.25px]" />
+        <SunMoon className="w-8 h-8" />
       ) : (
-        <Icons.SunMedium className="stroke-[1.25px]" />
+        <SunDim className="w-[35px] h-[35px]" />
       )}
     </button>
   );

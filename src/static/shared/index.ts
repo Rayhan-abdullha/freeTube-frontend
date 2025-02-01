@@ -1,4 +1,3 @@
-
 export const MENUS = [
     {
         id: 1,
@@ -7,9 +6,9 @@ export const MENUS = [
         isButton: false
     },
     {
-        id: 2,
-        label: 'Dashboard',
-        route: '/dashboard',
+        id: 5,
+        label: 'Blog',
+        route: '/blog',
         isButton: false
     },
     {
@@ -19,9 +18,9 @@ export const MENUS = [
         isButton: false
     },
     {
-        id: 5,
-        label: 'Blog',
-        route: '/blog',
+        id: 2,
+        label: 'Dashboard',
+        route: '/dashboard',
         isButton: false
     },
 ];

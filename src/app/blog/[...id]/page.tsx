@@ -6,8 +6,22 @@ import YouTubePlayer from "@/app/components/YoutubePlayer";
 import Image from "next/image";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { useEffect, useState } from "react";
+import Loader from "@/components/Loader";
 
 const BlogDetail = () => {
+  const [loader, setLoader] = useState(true);
+
+  useEffect(() => {
+    const promise = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(false)
+      }, 500)
+    })
+    promise.then((res) => {
+      setLoader(res as boolean)
+    })
+  },[])
   const { getBlogById } = useBlogContext();
   const params = useParams();
   const id = params?.id as string;
@@ -18,8 +32,9 @@ const BlogDetail = () => {
     return <p className="text-center text-lg">There is no blog available.</p>;
   }
 
+  
   return (
-    <div>
+    loader ? <Loader/> : <div>
       <div className="bg-gray-200 dark:bg-gray-800 py-10 md:py-14 overflow-hidden mt-[-26px]">
         <div className="max-w-4xl mx-auto items-center flex flex-col lg:flex-row gap-10 ">
           <div className="mx-5">
@@ -75,7 +90,7 @@ const BlogDetail = () => {
             >
               {section.content}
             </SyntaxHighlighter>
-     
+      
         )}
           {section.type === "image" && (
             <div className="mb-4">

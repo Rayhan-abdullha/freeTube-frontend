@@ -1,8 +1,9 @@
+import Image from "next/image";
+import logo from '../../public/logo.svg'
+
 const Logo = ({ className }: { className?: string }) => {
     return (
-        <h3 className={`text-xl font-bold ${className}`}>
-            MindSync 
-        </h3>
+        <Image src={logo} width={40} height={40} alt="Logo" className={className}/>
     );
 };
 
