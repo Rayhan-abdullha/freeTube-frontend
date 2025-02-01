@@ -13,7 +13,7 @@ export const Tabs: React.FC<TabsProps> = ({ activeTab, onTabChange }) => {
           activeTab === "add-video" && "translate-x-[10px]"
         } ${
           activeTab === "add-course" && "translate-x-[140px]"
-        } absolute bg-[#3B9DF8] text-[#fff] h-[85%] w-[95px] transition duration-700 rounded-full cursor-pointer`}
+        } absolute bg-[#5f27cd] text-[#fff] h-[85%] w-[95px] transition duration-700 rounded-full cursor-pointer`}
       ></div>
 
       <li

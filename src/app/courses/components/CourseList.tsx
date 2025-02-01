@@ -34,7 +34,7 @@ const CourseList = ({course}: {course: {id: number, thumb: string, title: string
         <p className="text-sm text-gray-600 mb-4">
             <span className="font-medium">{course.enrolled}</span> students enrolled
         </p>
-        <button onClick={() => handleEnroll()} className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">
+        <button onClick={() => handleEnroll()} className="w-full bg-[#5f27cd] text-white py-2 px-4 rounded-md hover:bg-[#43169e] transition duration-300">
             Enroll Now
         </button>
         </div>

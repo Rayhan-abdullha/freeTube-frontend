@@ -100,7 +100,7 @@ const VideoDetails = () => {
             />
             <button
               type="submit"
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              className="px-4 py-2 bg-[#5f27cd] text-white rounded-lg hover:[#5f27cd]"
             >
               Post
             </button>

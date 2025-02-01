@@ -9,10 +9,11 @@ import { Textarea } from "@/components/ui/textarea";
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('add-video')
   return (
-    <div className='max-w-7xl mx-auto px-6 md:px-0 mb-10'>
+    <div className='max-w-7xl mx-auto px-6 xl:px-0 mb-10'>
         <div className='mb-5'>
           <Tabs activeTab={activeTab} onTabChange={setActiveTab}/>
-        </div>
+      </div>
+      
       {
         activeTab === 'add-video' && <AddVideoForm onSubmit={() => {}}/>
       }

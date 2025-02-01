@@ -11,7 +11,7 @@ export const Tabs: React.FC<TabsProps> = ({ activeTab, onTabChange }) => {
       <button
         className={`py-2 px-4 text-sm font-medium ${
           activeTab === "enrolled-courses"
-            ? "text-blue-500 border-b-2 border-blue-500"
+            ? "text-[#5f27cd] border-b-2 border-[#5f27cd]"
             : "text-gray-600 dark:text-gray-400"
         }`}
         onClick={() => onTabChange("enrolled-courses")}
@@ -21,7 +21,7 @@ export const Tabs: React.FC<TabsProps> = ({ activeTab, onTabChange }) => {
       <button
         className={`py-2 px-4 text-sm font-medium ${
           activeTab === "playlist"
-            ? "text-blue-500 border-b-2 border-blue-500"
+            ? "text-[#5f27cd] border-b-2 border-[#5f27cd]"
             : "text-gray-600 dark:text-gray-400"
         }`}
         onClick={() => onTabChange("playlist")}
@@ -31,7 +31,7 @@ export const Tabs: React.FC<TabsProps> = ({ activeTab, onTabChange }) => {
       <button
         className={`py-2 px-4 text-sm font-medium ${
           activeTab === "blogs"
-            ? "text-blue-500 border-b-2 border-blue-500"
+            ? "text-[#5f27cd] border-b-2 border-[#5f27cd]"
             : "text-gray-600 dark:text-gray-400"
         }`}
         onClick={() => onTabChange("blogs")}
@@ -41,7 +41,7 @@ export const Tabs: React.FC<TabsProps> = ({ activeTab, onTabChange }) => {
       <button
         className={`py-2 px-4 text-sm font-medium ${
           activeTab === "add-video"
-            ? "text-blue-500 border-b-2 border-blue-500"
+            ? "text-[#5f27cd] border-b-2 border-[#5f27cd]"
             : "text-gray-600 dark:text-gray-400"
         }`}
         onClick={() => onTabChange("add-video")}
@@ -51,7 +51,7 @@ export const Tabs: React.FC<TabsProps> = ({ activeTab, onTabChange }) => {
       <button
         className={`py-2 px-4 text-sm font-medium ${
           activeTab === "add-blogs"
-            ? "text-blue-500 border-b-2 border-blue-500"
+            ? "text-[#5f27cd] border-b-2 border-[#5f27cd]"
             : "text-gray-600 dark:text-gray-400"
         }`}
         onClick={() => onTabChange("add-blogs")}

@@ -53,7 +53,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ profile, onUpdate }) =
                   name="name"
                   value={updatedProfile.name}
                   onChange={handleInputChange}
-                  className="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800 focus:ring-blue-500 focus:border-blue-500 text-gray-800 dark:text-gray-100"
+                  className="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800 focus:ring-[#5f27cd] focus:border-[#5f27cd] text-gray-800 dark:text-gray-100"
                 />
               </div>
               <div>
@@ -69,7 +69,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ profile, onUpdate }) =
                   name="email"
                   value={updatedProfile.email}
                   onChange={handleInputChange}
-                  className="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800 focus:ring-blue-500 focus:border-blue-500 text-gray-800 dark:text-gray-100"
+                  className="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800 focus:ring-[#5f27cd] focus:border-[#5f27cd] text-gray-800 dark:text-gray-100"
                 />
               </div>
               <div>
@@ -85,12 +85,12 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ profile, onUpdate }) =
                   name="password"
                   value={updatedProfile.password}
                   onChange={handleInputChange}
-                  className="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800 focus:ring-blue-500 focus:border-blue-500 text-gray-800 dark:text-gray-100"
+                  className="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800 focus:ring-[#5f27cd] focus:border-[#5f27cd] text-gray-800 dark:text-gray-100"
                 />
               </div>
               <button
                 type="submit"
-                className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+                className="px-4 py-2 bg-[#5f27cd] text-white rounded-md hover:bg-blue-600"
               >
                 Save Changes
               </button>
@@ -106,7 +106,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ profile, onUpdate }) =
               </p>
               <button
                 onClick={() => setEditing(true)}
-                className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+                className="mt-4 px-4 py-2 bg-[#5f27cd] text-white rounded-md hover:bg-[#401793]"
               >
                 Edit Profile
               </button>

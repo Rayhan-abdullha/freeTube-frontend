@@ -16,7 +16,7 @@ const BlogDetail = () => {
     const promise = new Promise((resolve) => {
       setTimeout(() => {
         resolve(false)
-      }, 500)
+      }, 1000)
     })
     promise.then((res) => {
       setLoader(res as boolean)

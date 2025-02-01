@@ -9,10 +9,10 @@ const ScrollTop = () => {
                 smooth
                 style={{
                     borderRadius: '99px',
-                    backgroundColor: '#3d73ff'
+                    backgroundColor: '#5f27cd'
                 }}
                 component={<Icons.MoveUp className='stroke-white' />}
-                className='rounded-full flex items-center justify-center !bg-base-200'
+                className='rounded-full flex items-center justify-center bg-[#5f27cd]'
             />
         </div>
     );

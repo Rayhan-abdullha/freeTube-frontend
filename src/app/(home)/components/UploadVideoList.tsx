@@ -90,13 +90,13 @@ const UploadVideoList = ({title}: {title?: string}) => {
                 <div className='flex justify-between'>
                     <button
                       onClick={(e) => handleOpenModal(e, video.url)}
-                      className="text-blue-600 hover:underline dark:text-blue-400 mt-4 inline-block"
+                      className="text-[#5f27cd] hover:underline dark:text-[#5f27cd] mt-4 inline-block"
                     >
                       Watch Now
                     </button>
                     <button
                       onClick={() => handleDetails(video)}
-                      className="text-blue-600 hover:underline dark:text-blue-400 mt-4 inline-block"
+                      className="text-[#5f27cd] hover:underline dark:text-[#5f27cd] mt-4 inline-block"
                     >
                       Details Watch
                 </button>

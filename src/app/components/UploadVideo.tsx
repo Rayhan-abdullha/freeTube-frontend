@@ -53,7 +53,7 @@ export const AddVideoForm: React.FC<AddVideoFormProps> = ({ onSubmit }) => {
             name="title"
             value={videoData.title}
             onChange={handleChange}
-            className="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800 focus:ring-blue-500 focus:border-blue-500 text-gray-800 dark:text-gray-100"
+            className="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800 focus:ring-[#5f27cd] focus:border-[#5f27cd] text-gray-800 dark:text-gray-100"
             placeholder="Enter video title"
           />
         </div>
@@ -72,7 +72,7 @@ export const AddVideoForm: React.FC<AddVideoFormProps> = ({ onSubmit }) => {
             name="url"
             value={videoData.url}
             onChange={handleChange}
-            className="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800 focus:ring-blue-500 focus:border-blue-500 text-gray-800 dark:text-gray-100"
+            className="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800 focus:ring-[#5f27cd] focus:border-[#5f27cd] text-gray-800 dark:text-gray-100"
             placeholder="Enter video URL"
           />
         </div>
@@ -90,7 +90,7 @@ export const AddVideoForm: React.FC<AddVideoFormProps> = ({ onSubmit }) => {
             name="description"
             value={videoData.description}
             onChange={handleChange}
-            className="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800 focus:ring-blue-500 focus:border-blue-500 text-gray-800 dark:text-gray-100"
+            className="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800 focus:ring-[#5f27cd] focus:border-[#5f27cd] text-gray-800 dark:text-gray-100"
             placeholder="Enter video description"
             rows={4}
           />
@@ -117,7 +117,7 @@ export const AddVideoForm: React.FC<AddVideoFormProps> = ({ onSubmit }) => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+          className="px-4 py-2 bg-[#5f27cd] text-white rounded-md hover:bg-[#421e8a]"
         >
           Submit
         </button>

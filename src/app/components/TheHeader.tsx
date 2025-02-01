@@ -40,7 +40,7 @@ const TheHeader = () => {
                 <nav className='hidden sm:flex items-center gap-6 text-gray-900 dark:text-white'>
                     {
                         MENUS.map(({ id, route, label }) => (
-                            <Link key={id} href={route} className={`hover:text-primary-500 px-3 py-2 ${pathName === route ? 'font-medium text-blue-500' : ''}`}>
+                            <Link key={id} href={route} className={`hover:text-primary-500 px-3 py-2 ${pathName === route ? 'font-medium text-[#5f27cd]' : ''}`}>
                                 {label === 'Home' && <Home className='w-8 h-8' /> }
                                 {label === 'Dashboard' && <LayoutDashboard className='w-[30px] h-[30px]' /> }
                                 {label === 'Courses' && <GraduationCap className='w-10 h-10' /> }
@@ -51,7 +51,7 @@ const TheHeader = () => {
                    {
                     !isLogin ?  <Link
                     href={'/auth?tab=login'}
-                    className={`bg-base-200 py-1 px-4 text-white rounded-full font-medium hover:scale-105 transition-all duration-300`}
+                    className={`bg-[#5f27cd] py-1 px-4 text-white rounded-full font-medium hover:scale-105 transition-all duration-300`}
                     >
                         Login
                         </Link> :
@@ -93,7 +93,7 @@ const TheHeader = () => {
                  {
                     isLogin ?  <Link
                     href={'/auth?tab=login'}
-                    className={`bg-base-200 px-5 py-2 text-white rounded-full font-medium hover:scale-105 transition-all duration-300`}
+                    className={`bg-[#5f27cd] px-5 py-2 text-white rounded-full font-medium hover:scale-105 transition-all duration-300`}
                     >
                         Login
                     </Link> : <Image

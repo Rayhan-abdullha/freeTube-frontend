@@ -200,7 +200,7 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #4e90dc; /* Change to your desired color */
+    background-color: #5f27cd; /* Change to your desired color */
     border-radius: 10px; /* Make the scrollbar thumb rounded */
 }
 

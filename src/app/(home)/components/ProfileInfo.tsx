@@ -23,7 +23,7 @@ const ProfileInfo = () => {
                 <p className="text-gray-600 dark:text-gray-400">programmer.rayhan1@gmail.com</p>
             </div>
           </div>
-          <button className='bg-blue-500 text-white mt-5 sm:mt-0 text-sm py-3 px-5 hover:bg-blue-600 rounded-full flex items-center gap-2'>
+          <button className='bg-[#5f27cd] text-white mt-5 sm:mt-0 text-sm py-3 px-5 hover:bg-[#5f27cd] rounded-full flex items-center gap-2'>
             <FiBell className='mt-[3px]'/>
             Subscribe
           </button>

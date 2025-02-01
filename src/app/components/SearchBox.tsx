@@ -9,7 +9,7 @@ const SearchBox = () => {
         className="flex-grow p-2 outline-none rounded-l-lg bg-white dark:bg-gray-800 placeholder-gray-400"
         placeholder="Search Videos..."
       />
-      <button className="bg-blue-500 text-white p-2 rounded-r-lg">
+      <button className="bg-[#5f27cd] text-white p-2 rounded-r-lg">
         <FaSearch />
       </button>
     </div>

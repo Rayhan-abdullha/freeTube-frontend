@@ -61,7 +61,7 @@ const BlogForm = () => {
         placeholder="Blog Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        className="w-full p-2 mb-6 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full p-2 mb-6 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5f27cd]"
       />
 
       {/* Cover Image Upload */}
@@ -70,7 +70,7 @@ const BlogForm = () => {
         <input
           type="file"
           onChange={handleFileUpload}
-          className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5f27cd]"
         />
         {coverImage && (
           <div className="mt-4">
@@ -92,7 +92,7 @@ const BlogForm = () => {
               placeholder="Heading"
               value={section.content}
               onChange={(e) => updateSectionContent(index, e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-xl font-bold"
+              className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5f27cd] text-xl font-bold"
             />
           )}
           {section.type === "subheading" && (
@@ -101,7 +101,7 @@ const BlogForm = () => {
               placeholder="Subheading"
               value={section.content}
               onChange={(e) => updateSectionContent(index, e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg font-semibold"
+              className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5f27cd] text-lg font-semibold"
             />
           )}
           {section.type === "paragraph" && (
@@ -109,7 +109,7 @@ const BlogForm = () => {
               placeholder="Paragraph"
               value={section.content}
               onChange={(e) => updateSectionContent(index, e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5f27cd]"
               rows={4}
             />
           )}
@@ -118,7 +118,7 @@ const BlogForm = () => {
               placeholder="Code Block"
               value={section.content}
               onChange={(e) => updateSectionContent(index, e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono bg-gray-100"
+              className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5f27cd] font-mono bg-gray-100"
               rows={4}
             />
           )}
@@ -128,7 +128,7 @@ const BlogForm = () => {
               placeholder="Image URL"
               value={section.content}
               onChange={(e) => updateSectionContent(index, e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5f27cd]"
             />
           )}
           {section.type === "video" && (
@@ -137,7 +137,7 @@ const BlogForm = () => {
               placeholder="Video URL"
               value={section.content}
               onChange={(e) => updateSectionContent(index, e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5f27cd]"
             />
           )}
         </div>
@@ -148,42 +148,42 @@ const BlogForm = () => {
         <button
           type="button"
           onClick={() => addSection("heading")}
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+          className="px-4 py-2 bg-[#5f27cd] text-white rounded-lg hover:bg-blue-600"
         >
           Add Heading
         </button>
         <button
           type="button"
           onClick={() => addSection("subheading")}
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+          className="px-4 py-2 bg-[#5f27cd] text-white rounded-lg hover:bg-blue-600"
         >
           Add Subheading
         </button>
         <button
           type="button"
           onClick={() => addSection("paragraph")}
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+          className="px-4 py-2 bg-[#5f27cd] text-white rounded-lg hover:bg-blue-600"
         >
           Add Paragraph
         </button>
         <button
           type="button"
           onClick={() => addSection("code")}
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+          className="px-4 py-2 bg-[#5f27cd] text-white rounded-lg hover:bg-blue-600"
         >
           Add Code
         </button>
         <button
           type="button"
           onClick={() => addSection("image")}
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+          className="px-4 py-2 bg-[#5f27cd] text-white rounded-lg hover:bg-blue-600"
         >
           Add Image
         </button>
         <button
           type="button"
           onClick={() => addSection("video")}
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+          className="px-4 py-2 bg-[#5f27cd] text-white rounded-lg hover:bg-blue-600"
         >
           Add Video
         </button>
