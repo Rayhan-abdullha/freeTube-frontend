@@ -43,7 +43,7 @@ const TheHeader = () => {
                             key={id} 
                             href={route} 
                             title={label}
-                            className={`hover:text-primary-500 px-3 py-2 ${pathName === route ? 'font-medium text-[#5f27cd]' : ''}`}
+                            className={`hover:text-[#b499e9] transition-all duration-300 px-3 py-2 ${pathName === route ? 'font-medium text-[#5f27cd]' : ''}`}
                         >
                             {label === 'Home' && <Home className='w-8 h-8' />}
                             {label === 'Dashboard' && <LayoutDashboard className='w-[30px] h-[30px]' />}
@@ -86,19 +86,22 @@ const TheHeader = () => {
                 onClick={closeMobileMenu}
             />
             <div 
-                className={`fixed inset-y-0 left-0 bg-white dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center gap-6 pt-20 shadow-lg rounded-lg w-full sm:w-1/2 transition-transform duration-300 ${isShowMobileMenu ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
-                <button className='absolute top-4 right-4' onClick={closeMobileMenu}>
+                className={`fixed inset-y-0 left-0 bg-white dark:bg-gray-900 text-gray-900 dark:text-white pt-20 pl-5 shadow-lg rounded-lg w-2/3 sm:w-1/2 transition-transform duration-300 ${isShowMobileMenu ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
+                <button className='absolute top-4 right-4 hover:transform hover:scale-110 transition-all' onClick={closeMobileMenu}>
                     <Icons.X className='text-gray-600 dark:text-white' />
                 </button>
                 {MENUS.map(({ id, route, label }) => (
-                    <Link key={id} href={route} className='text-lg font-medium py-2 hover:text-primary-500' onClick={closeMobileMenu}>
-                        {label}
+                    <Link key={id} href={route} className='text-base font-medium py-2 hover:text-primary-500 mb-3 block hover:transform hover:scale-105 transition-all' onClick={closeMobileMenu}>
+                            {label === 'Home' && <div className='flex gap-2 items-center'><Home className='w-6 h-6' />{label}</div>}
+                            {label === 'Dashboard' && <div className='flex gap-2 items-center'><LayoutDashboard className='w-6 h-6' />{label}</div>}
+                            {label === 'Courses' && <div className='flex gap-2 items-center'><GraduationCap className='w-7 h-7' />{label}</div>}
+                            {label === 'Blog' && <div className='flex gap-2 items-center'><BookOpen className='w-6 h-6' />{label}</div>}
                     </Link>
                 ))}
                  {
                     isLogin ?  <Link
                     href={'/auth?tab=login'}
-                    className={`bg-[#5f27cd] px-5 py-2 text-white rounded-full font-medium hover:scale-105 transition-all duration-300`}
+                    className={`bg-[#5f27cd] px-5 py-2 text-white rounded-full font-medium hover:transform hover:scale-105 transition-all`}
                     >
                         Login
                     </Link> : <Image
@@ -106,7 +109,7 @@ const TheHeader = () => {
                         alt="Avatar"
                         width={50}
                         height={50}
-                        className="rounded-full"
+                        className="rounded-full w-10 h-10 object-cover shadow-md cursor-pointer hover:scale-105 transition-all duration-300"
                     />
                 }
             </div>
