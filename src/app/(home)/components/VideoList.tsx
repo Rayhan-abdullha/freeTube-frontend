@@ -8,9 +8,12 @@ import VideoModal from './VideoModal';
 import { FiBell, FiMessageSquare, FiPlay } from 'react-icons/fi';
 import VideoSkeleton from '@/components/VideoSkeleton';
 import Link from 'next/link';
+import SearchBox from '@/app/components/SearchBox';
 
 const VideoList = () => {
   const [videoFeeds, setVideoFeeds] = useState<VideosType[]>([]);
+  const [filterVideos, setFilterVideos] = useState<VideosType[]>([]);
+  
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string>('');
 
@@ -50,16 +53,18 @@ const VideoList = () => {
     })
     promise.then((res) => {
       setVideoFeeds(res as VideosType[])
+      setFilterVideos(res as VideosType[])
     })
   },[])
 
   return (
     <>
+      <SearchBox setFilterVideos={setFilterVideos}/>
       {
         videoFeeds.length === 0 ? < VideoSkeleton grid='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 gap-4'/> :
         <div className="my-5 mx-5 2xl:mx-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 gap-4">
-        {videoFeeds.map((video: VideosType, index: number) => (
+        {filterVideos.map((video: VideosType, index: number) => (
           <div
             key={index}
             className="bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-900 transition-colors duration-300"

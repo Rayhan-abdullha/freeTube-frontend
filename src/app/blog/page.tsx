@@ -33,7 +33,7 @@ export default function BlogHome() {
   return (
     <>
       {
-        blog.length === 0 ? <div className="mx-auto max-w-7xl"><Skeleton len={2} grid="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"/></div> : <div className="mx-auto max-w-7xl p-5">
+        blog.length === 0 ? <div className="mx-auto max-w-7xl"><Skeleton len={10} grid="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"/></div> : <div className="mx-auto max-w-7xl p-5">
         <h1 className="text-xl font-bold mb-6">Blog Home</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {blog.map((blog) => (
